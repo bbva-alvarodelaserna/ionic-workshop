@@ -1,4 +1,4 @@
-<ion-view view-title="To-DO">
+<ion-view view-title="To-Do">
   <ion-content>
     <h2 style="text-align:center">To-Do list</h2>
     <ion-item ng-if="vm.list.length == 0">
@@ -6,9 +6,9 @@
     </ion-item>
     <ion-list>
       <label class="item item-divider">
-          <span style="position: relative; top: 10px;">List</span> <i class="icon ion-ios-plus-outline button-add" style="float: right" ng-click="vm.showDialog()"></i>
+          <span style="position: relative; top: 10px;">List</span> <i class="icon ion-ios-plus-outline button-add" style="float: right;" ng-click="vm.showDialog()"></i>
       </label>
-      <ion-item class="item-remove-animate item-icon-right" ng-repeat="item in vm.list" type="item-text-wrap" href="#/tab/todo/{{item.id}}">
+      <ion-item class="item-remove-animate item-icon-right" ng-repeat="item in vm.list" type="item-text-wrap">
         <i ng-class="{true:'icon ion-android-checkbox-outline', false:'icon ion-android-checkbox-outline-blank'}[item.completed == true]"></i>
         <h2>{{item.name}}</h2>
         <p>{{item.description}}</p>

@@ -1,43 +1,43 @@
 angular.module('starter.controllers')
 
 .controller('TodoCtrl', ['$scope', 'List', '$ionicModal', function($scope, List, $ionicModal) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
+  
   var vm = this;
 
-  vm.addDialog = "";
   vm.list = List.all();
-  vm.remove = function(chat) {
-    List.remove(chat);
-  };
-
-  vm.markAsCompleted = function(item) {
-      item.completed = true;
-  }
+  vm.addDialog = {};
+  vm.showDialog = showDialog;
+  vm.remove = remove;
+  vm.markAsCompleted = markAsCompleted;
+  vm.leaveDialog = leaveDialog;
+  vm.addItem = addItem;
 
   // Load the add / change dialog from the given template URL
-  $ionicModal.fromTemplateUrl('templates/dialog.html', function(modal) {
+  $ionicModal.fromTemplateUrl('/templates/dialog.html', function(modal) {
     vm.addDialog = modal;
   }, {
     scope: $scope,
     animation: 'slide-in-up'
   });
 
+  function remove(chat) {
+    List.remove(chat);
+  };
 
-  vm.showDialog = function() {
+  function markAsCompleted(item) {
+    item.completed = true;
+  }
+
+  function showDialog() {
+    console.log('entro');
     vm.addDialog.show();
   };
 
-  vm.leaveDialog = function() {
+  function leaveDialog() {
     // Remove dialog 
     vm.addDialog.remove();
     // Reload modal template to have cleared form
-    $ionicModal.fromTemplateUrl('templates/dialog.html', function(modal) {
+    $ionicModal.fromTemplateUrl('/templates/dialog.html', function(modal) {
       vm.addDialog = modal;
     }, {
       scope: $scope,
@@ -45,7 +45,7 @@ angular.module('starter.controllers')
     });
   };
 
-  vm.addItem = function(form) {
+  function addItem(form) {
     var newItem = {};
     // Add values from form to object
     newItem.description = form.description.$modelValue;
