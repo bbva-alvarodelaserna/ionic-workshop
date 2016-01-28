@@ -33,7 +33,7 @@ angular.module('starter.controllers')
     vm.addDialog.show();
   };
 
-  vm.leaveAddChangeDialog = function() {
+  vm.leaveDialog = function() {
     // Remove dialog 
     vm.addDialog.remove();
     // Reload modal template to have cleared form
@@ -43,19 +43,6 @@ angular.module('starter.controllers')
       scope: $scope,
       animation: 'slide-in-up'
     });
-  };
-
-  vm.addItem = function(form) {
-    var newItem = {};
-    // Add values from form to object
-    newItem.description = form.description.$modelValue;
-    newItem.name = form.name.$modelValue;
-    
-    // Save new list in scope and factory
-    vm.list.push(newItem);
-    List.setList(vm.list);
-    // Close dialog
-    vm.leaveAddChangeDialog();
   };
 
 }]);
