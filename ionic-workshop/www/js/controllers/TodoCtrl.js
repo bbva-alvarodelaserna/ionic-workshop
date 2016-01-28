@@ -33,7 +33,7 @@ angular.module('starter.controllers')
     vm.addDialog.show();
   };
 
-  vm.leaveAddChangeDialog = function() {
+  vm.leaveDialog = function() {
     // Remove dialog 
     vm.addDialog.remove();
     // Reload modal template to have cleared form
