@@ -7,7 +7,7 @@
     	<label class="item item-divider" ng-click="vm.addImage()">
           <span style="position: relative; top: 10px;">Gallery</span> <i class="icon ion-camera button-add" style="float: right;"></i>
       	</label>
-      	<ion-item class="item" ng-repeat="pic in vm.images" type="item-text-wrap">
+      	<ion-item class="item" style="text-align: center" ng-repeat="pic in vm.images" type="item-text-wrap">
         	<img data-ng-src="{{pic}}">
       	</ion-item>
     </ion-list>

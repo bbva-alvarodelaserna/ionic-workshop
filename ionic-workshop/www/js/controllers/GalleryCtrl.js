@@ -9,16 +9,16 @@ angular.module('starter.controllers')
   //$scope.$on('$ionicView.enter', function(e) {
   //});
   var vm = this;
-  vm.picURI = "";
 
   vm.images = FileService.getImages();
   vm.addImage = addImage;
 
-
   function addImage(){
     ImageService.addImageFromCamera().then(function(imageData) {
       console.log(imageData);
-      vm.picURI = imageData;
+      var imgURI = "data:image/jpeg;base64," + imageData;
+      FileService.addImage(imgURI);
+      vm.images = FileService.getImages();
     });
   }
 
