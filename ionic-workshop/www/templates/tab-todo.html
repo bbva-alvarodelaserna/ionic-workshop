@@ -5,8 +5,8 @@
       Press <i class="icon ion-ios-plus-outline"></i> to add an item
     </ion-item>
     <ion-list>
-      <label class="item item-divider">
-          <span style="position: relative; top: 10px;">List</span> <i class="icon ion-ios-plus-outline button-add" style="float: right;" ng-click="vm.showDialog()"></i>
+      <label class="item item-divider" ng-click="vm.showDialogo()">
+          <span style="position: relative; top: 10px;">List</span> <i class="icon ion-ios-plus-outline button-add" style="float: right;"></i>
       </label>
       <ion-item class="item-remove-animate item-icon-right" ng-repeat="item in vm.list" type="item-text-wrap">
         <i ng-class="{true:'icon ion-android-checkbox-outline', false:'icon ion-android-checkbox-outline-blank'}[item.completed == true]"></i>

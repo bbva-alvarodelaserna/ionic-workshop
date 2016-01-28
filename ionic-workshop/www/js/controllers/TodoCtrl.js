@@ -3,17 +3,17 @@ angular.module('starter.controllers')
 .controller('TodoCtrl', ['$scope', 'List', '$ionicModal', function($scope, List, $ionicModal) {
   
   var vm = this;
-
+console.log('entro');
   vm.list = List.all();
   vm.addDialog = {};
-  vm.showDialog = showDialog;
+  vm.showDialogo = showDialog;
   vm.remove = remove;
   vm.markAsCompleted = markAsCompleted;
   vm.leaveDialog = leaveDialog;
   vm.addItem = addItem;
 
   // Load the add / change dialog from the given template URL
-  $ionicModal.fromTemplateUrl('/templates/dialog.html', function(modal) {
+  $ionicModal.fromTemplateUrl('templates/dialog.html', function(modal) {
     vm.addDialog = modal;
   }, {
     scope: $scope,
@@ -37,7 +37,7 @@ angular.module('starter.controllers')
     // Remove dialog 
     vm.addDialog.remove();
     // Reload modal template to have cleared form
-    $ionicModal.fromTemplateUrl('/templates/dialog.html', function(modal) {
+    $ionicModal.fromTemplateUrl('templates/dialog.html', function(modal) {
       vm.addDialog = modal;
     }, {
       scope: $scope,
@@ -55,7 +55,7 @@ angular.module('starter.controllers')
     vm.list.push(newItem);
     List.setList(vm.list);
     // Close dialog
-    vm.leaveAddChangeDialog();
+    vm.leaveDialog();
   };
 
 }]);
