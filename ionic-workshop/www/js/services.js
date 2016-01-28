@@ -6,41 +6,41 @@ angular.module('starter.services', [])
   // Some fake testing data
   var items = [{
     id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'You on your way?',
-    face: 'img/ben.png'
+    name: 'Ir al Macera',
+    description: 'Se acerca el fin de semana, necesito macerar',
+    completed: false
   }, {
     id: 1,
     name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
-    face: 'img/max.png'
+    description: 'Hey, it\'s me',
+    completed: true
   }, {
     id: 2,
     name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
-    face: 'img/adam.jpg'
+    description: 'I should buy a boat',
+    completed: false
   }, {
     id: 3,
     name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
-    face: 'img/perry.png'
+    description: 'Look at my mukluks!',
+    completed: false
   }, {
     id: 4,
     name: 'Mike Harrington',
-    lastText: 'This is wicked good ice cream.',
-    face: 'img/mike.png'
+    description: 'This is wicked good ice cream.',
+    completed: false
   }];
 
   return {
     all: function() {
       return items;
     },
-    remove: function(chat) {
-      items.splice(items.indexOf(chat), 1);
+    remove: function(item) {
+      items.splice(items.indexOf(item), 1);
     },
-    get: function(chatId) {
+    get: function(itemId) {
       for (var i = 0; i < items.length; i++) {
-        if (items[i].id === parseInt(chatId)) {
+        if (items[i].id === parseInt(itemId)) {
           return items[i];
         }
       }

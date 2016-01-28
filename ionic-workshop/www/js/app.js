@@ -45,7 +45,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-dash': {
         templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+        controller: 'DashCtrl as vm'
       }
     }
   })
@@ -55,16 +55,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       views: {
         'tab-todo': {
           templateUrl: 'templates/tab-todo.html',
-          controller: 'TodoCtrl'
+          controller: 'TodoCtrl as vm'
         }
       }
     })
     .state('tab.todo-detail', {
-      url: '/todos/:todoId',
+      url: '/todo/:todoId',
       views: {
         'tab-todo': {
           templateUrl: 'templates/todo-detail.html',
-          controller: 'TodoDetailCtrl'
+          controller: 'TodoDetailCtrl as vm'
         }
       }
     })
@@ -74,7 +74,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-account': {
         templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+        controller: 'AccountCtrl as vm'
       }
     }
   });

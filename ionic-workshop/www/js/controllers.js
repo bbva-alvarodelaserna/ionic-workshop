@@ -10,11 +10,16 @@ angular.module('starter.controllers', [])
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+  var vm = this;
 
-  $scope.List = List.all();
-  $scope.remove = function(chat) {
+  vm.list = List.all();
+  vm.remove = function(chat) {
     List.remove(chat);
   };
+
+  vm.markAsCompleted = function(item) {
+      item.completed = true;
+  }
 })
 
 .controller('TodoDetailCtrl', function($scope, $stateParams, List) {

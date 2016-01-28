@@ -2,14 +2,16 @@
   <ion-content>
     <h2 style="text-align:center">To-Do list</h2>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="item in items" type="item-text-wrap" href="#/tab/items/{{item.id}}">
-        <img ng-src="{{item.face}}">
+      <ion-item class="item-remove-animate item-icon-right" ng-repeat="item in vm.list" type="item-text-wrap" href="#/tab/todo/{{item.id}}">
+        <i ng-class="{true:'icon ion-android-checkbox-outline', false:'icon ion-android-checkbox-outline-blank'}[item.completed == true]"></i>
         <h2>{{item.name}}</h2>
-        <p>{{item.lastText}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
+        <p>{{item.description}}</p>
 
-        <ion-option-button class="button-assertive" ng-click="remove(item)">
-          Delete
+        <ion-option-button class="button-positive" ng-click="vm.markAsCompleted(item)">
+          <i class="icon ion-checkmark-round" style="color: white"></i>
+        </ion-option-button>
+        <ion-option-button class="button-assertive" ng-click="vm.remove(item)">
+          <i class="icon ion-android-delete" style="color: white"></i>
         </ion-option-button>
       </ion-item>
     </ion-list>
