@@ -12,10 +12,11 @@ angular.module('starter.controllers')
   vm.picURI = "";
 
   vm.images = FileService.getImages();
+  vm.addImage = addImage;
 
 
   function addImage(){
-    ImageService.saveMedia(0, false).then(function(imageData) {
+    ImageService.addImageFromCamera().then(function(imageData) {
       console.log(imageData);
       vm.picURI = imageData;
     });
