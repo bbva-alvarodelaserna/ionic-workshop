@@ -1,1 +1,6 @@
 /* Empty. Add your own CSS if you like */
+.button-add {
+	font-size: 30px;
+	position: relative;
+	margin-right: 10px;
+}
